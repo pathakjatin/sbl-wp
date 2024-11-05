@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers between 1 and 100</title>
+</head>
+<body>
+
+    <h1>Prime Numbers between 1 and 100</h1>
+    <div id="primeNumbers"></div>
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false; // 0 and 1 are not prime numbers
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false; // Not a prime number
+                }
+            }
+            return true; // Is a prime number
+        }
+
+        function displayPrimeNumbers() {
+            let primeNumbers = [];
+            for (let i = 1; i <= 100; i++) {
+                if (isPrime(i)) {
+                    primeNumbers.push(i); // Add prime number to the array
+                }
+            }
+            document.getElementById("primeNumbers").innerText = primeNumbers.join(", ");
+        }
+
+        // Call the function to display prime numbers
+        displayPrimeNumbers();
+    </script>
+
+</body>
+</html>

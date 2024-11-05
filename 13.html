@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Statements Demo</title>
+</head>
+<body>
+
+    <h1>Looping Statements in JavaScript</h1>
+    <p>Enter a positive number:</p>
+    <input type="number" id="userInput" placeholder="Enter a number" min="1" required>
+    <button onclick="runLoops()">Run Loops</button>
+
+    <h2>Results:</h2>
+    <div id="result"></div>
+
+    <script>
+        function runLoops() {
+            const number = parseInt(document.getElementById("userInput").value);
+            let resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = ""; // Clear previous results
+
+            // Using a for loop
+            resultDiv.innerHTML += "<strong>For Loop:</strong><br>";
+            for (let i = 1; i <= number; i++) {
+                resultDiv.innerHTML += i + " ";
+            }
+            resultDiv.innerHTML += "<br><br>";
+
+            // Using a while loop
+            resultDiv.innerHTML += "<strong>While Loop:</strong><br>";
+            let j = 1;
+            while (j <= number) {
+                resultDiv.innerHTML += j + " ";
+                j++;
+            }
+            resultDiv.innerHTML += "<br><br>";
+
+            // Using a do...while loop
+            resultDiv.innerHTML += "<strong>Do...While Loop:</strong><br>";
+            let k = 1;
+            do {
+                resultDiv.innerHTML += k + " ";
+                k++;
+            } while (k <= number);
+            resultDiv.innerHTML += "<br><br>";
+        }
+    </script>
+
+</body>
+</html>

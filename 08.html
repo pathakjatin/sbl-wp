@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial and Fibonacci Calculator</title>
+</head>
+<body>
+
+    <h1>Factorial and Fibonacci Calculator</h1>
+    <p>Enter a number:</p>
+    
+    <input type="number" id="numberInput" placeholder="Enter a number" min="0" required>
+    <br><br>
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <button onclick="calculateFibonacci()">Generate Fibonacci Series</button>
+
+    <div id="result"></div>
+
+    <script>
+        // Function to calculate factorial
+        function calculateFactorial() {
+            const number = parseInt(document.getElementById("numberInput").value);
+            const resultDiv = document.getElementById("result");
+
+            if (isNaN(number) || number < 0) {
+                resultDiv.innerHTML = "Please enter a valid positive number.";
+                return;
+            }
+
+            let factorial = 1;
+            for (let i = 1; i <= number; i++) {
+                factorial *= i;
+            }
+
+            resultDiv.innerHTML = `Factorial of ${number} is: ${factorial}`;
+        }
+
+        // Function to generate Fibonacci series
+        function calculateFibonacci() {
+            const number = parseInt(document.getElementById("numberInput").value);
+            const resultDiv = document.getElementById("result");
+
+            if (isNaN(number) || number < 0) {
+                resultDiv.innerHTML = "Please enter a valid positive number.";
+                return;
+            }
+
+            let fibSeries = [0, 1];
+            for (let i = 2; i <= number; i++) {
+                fibSeries[i] = fibSeries[i - 1] + fibSeries[i - 2];
+            }
+
+            resultDiv.innerHTML = `Fibonacci series up to ${number}: ${fibSeries.slice(0, number + 1).join(", ")}`;
+        }
+    </script>
+
+</body>
+</html>

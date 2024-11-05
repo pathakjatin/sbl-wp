@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Digits</title>
+</head>
+<body>
+
+    <h1>Sum of Digits Calculator</h1>
+    <p>Enter a number:</p>
+    <input type="number" id="userInput" placeholder="Enter a number" required>
+    <button onclick="calculateSum()">Calculate Sum of Digits</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateSum() {
+            const number = document.getElementById("userInput").value;
+
+            if (number === "" || isNaN(number)) {
+                document.getElementById("result").innerText = "Please enter a valid number.";
+                return;
+            }
+
+            let sum = 0;
+
+            // Convert the number to a string to iterate over each digit
+            const digits = number.toString();
+            for (let i = 0; i < digits.length; i++) {
+                sum += parseInt(digits[i], 10); // Convert each character back to an integer and add to sum
+            }
+
+            document.getElementById("result").innerText = `The sum of the digits is: ${sum}`;
+        }
+    </script>
+
+</body>
+</html>

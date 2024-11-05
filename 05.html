@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Tables Example</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+        }
+
+        /* Table Container Styling */
+        .table-container {
+            margin-bottom: 40px;
+        }
+
+        /* Basic Table Styling */
+        .basic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .basic-table th, .basic-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .basic-table th {
+            background-color: #4CAF50;
+            color: white;
+            text-align: left;
+        }
+
+        /* Striped Table Styling */
+        .striped-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .striped-table th, .striped-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        .striped-table th {
+            background-color: #333;
+            color: white;
+        }
+        .striped-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Bordered Table Styling */
+        .bordered-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .bordered-table th, .bordered-table td {
+            padding: 10px;
+            border: 1px solid #333;
+        }
+        .bordered-table th {
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Hoverable Table Styling */
+        .hover-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .hover-table th, .hover-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .hover-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .hover-table tr:hover {
+            background-color: #d1f7d1;
+        }
+
+        /* Responsive Table Styling */
+        .responsive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .responsive-table th, .responsive-table td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .responsive-table th {
+            background-color: #f2f2f2;
+        }
+        .responsive-table td {
+            font-size: 14px;
+        }
+
+        /* Mobile view for smaller screens */
+        @media (max-width: 600px) {
+            .responsive-table, .striped-table, .hover-table, .bordered-table, .basic-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Styled Tables Example</h1>
+
+    <div class="table-container">
+        <h2>Basic Table</h2>
+        <table class="basic-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Alice</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bob</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Charlie</td>
+                    <td>28</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>Striped Table</h2>
+        <table class="striped-table">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Laptop</td>
+                    <td>$800</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Smartphone</td>
+                    <td>$600</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Tablet</td>
+                    <td>$300</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>Bordered Table</h2>
+        <table class="bordered-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5001</td>
+                    <td>David</td>
+                    <td>Shipped</td>
+                </tr>
+                <tr>
+                    <td>5002</td>
+                    <td>Emma</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>5003</td>
+                    <td>Olivia</td>
+                    <td>Delivered</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>Hoverable Table</h2>
+        <table class="hover-table">
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2001</td>
+                    <td>Keyboard</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>2002</td>
+                    <td>Mouse</td>
+                    <td>300</td>
+               

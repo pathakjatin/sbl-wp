@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements Demo</title>
+</head>
+<body>
+
+    <h1>Conditional Statements in JavaScript</h1>
+    <p>Enter a number (1-5):</p>
+    <input type="number" id="userInput" placeholder="Enter a number" min="1" max="5" required>
+    <button onclick="checkNumber()">Check Number</button>
+
+    <div id="result"></div>
+
+    <script>
+        function checkNumber() {
+            const number = parseInt(document.getElementById("userInput").value);
+            let resultDiv = document.getElementById("result");
+
+            // Using if-else conditional statements
+            if (number < 1 || number > 5) {
+                resultDiv.innerText = "Please enter a number between 1 and 5.";
+            } else if (number === 1) {
+                resultDiv.innerText = "You entered one.";
+            } else if (number === 2) {
+                resultDiv.innerText = "You entered two.";
+            } else if (number === 3) {
+                resultDiv.innerText = "You entered three.";
+            } else if (number === 4) {
+                resultDiv.innerText = "You entered four.";
+            } else if (number === 5) {
+                resultDiv.innerText = "You entered five.";
+            }
+
+            // Using switch statement for the same logic
+            switch (number) {
+                case 1:
+                    resultDiv.innerText += " (Switch: One)";
+                    break;
+                case 2:
+                    resultDiv.innerText += " (Switch: Two)";
+                    break;
+                case 3:
+                    resultDiv.innerText += " (Switch: Three)";
+                    break;
+                case 4:
+                    resultDiv.innerText += " (Switch: Four)";
+                    break;
+                case 5:
+                    resultDiv.innerText += " (Switch: Five)";
+                    break;
+                default:
+                    // This case will not be hit due to the earlier validation
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
